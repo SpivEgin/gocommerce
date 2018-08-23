@@ -1,1 +1,1 @@
-git add -A && git commit -m "changed base image to golangbase" && git push
+git add -A && git commit -m "re wrote commerce docker file" && git push
