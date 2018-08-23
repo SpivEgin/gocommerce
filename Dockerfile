@@ -1,10 +1,11 @@
-FROM netlify/go-glide:v0.12.3
+FROM quay.io/spivegin/golangdart2
 
 RUN mkdir /opt/dep/
-ADD . /go/src/github.com/netlify/gocommerce
+ADD . /opt/src/github.com/netlify/gocommerce
 ADD https://github.com/golang/dep/releases/download/v0.5.0/dep-linux-amd64 /opt/dep/dep
 RUN chmod +x /opt/dep/dep && ln -s /opt/dep/dep /bin/dep &&\
-    useradd -m netlify && cd /go/src/github.com/netlify/gocommerce && make deps build_linux && mv gocommerce /usr/local/bin/
+    useradd -m netlify && cd /opt/src/github.com/netlify/gocommerce && dep ensure && make build_linux && cp gocommerce
+    /usr/local/bin/
 
 USER netlify
 CMD ["gocommerce"]
