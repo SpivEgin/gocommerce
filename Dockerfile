@@ -1,6 +1,5 @@
 FROM quay.io/spivegin/golangdart2
 
-ENV GOPATH=/opt/src
 RUN mkdir /opt/dep/ /opt/gocommerce /opt/src/src
 ADD . /opt/src/src/github.com/netlify/gocommerce
 ADD https://github.com/golang/dep/releases/download/v0.5.0/dep-linux-amd64 /opt/dep/dep
