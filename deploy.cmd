@@ -1,1 +1,1 @@
-git add -A && git commit -m "added go path v01" && git push
+git add -A && git commit -m "changed base image to golangbase" && git push
