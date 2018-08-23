@@ -1,1 +1,1 @@
-git add -A && git commit -m "changed base image" && git push
+git add -A && git commit -m "typo in dockerfile" && git push
