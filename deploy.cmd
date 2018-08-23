@@ -1,1 +1,1 @@
-git add -A && git commit -m "re wrote commerce docker file" && git push
+git add -A && git commit -m "rebased golcang base image" && git push
