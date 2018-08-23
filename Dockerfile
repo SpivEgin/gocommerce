@@ -1,7 +1,7 @@
 # Build image
 FROM quay.io/spivegin/golangbase AS build-env
-WORKDIR /opt/gocommerce
 RUN mkdir /opt/dep/ /opt/gocommerce /opt/src/src
+WORKDIR /opt/gocommerce
 ADD . /opt/src/src/github.com/netlify/gocommerce
 RUN cd /opt/src/src/github.com/netlify/gocommerce &&\
     dep ensure &&\
