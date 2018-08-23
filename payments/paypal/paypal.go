@@ -186,7 +186,7 @@ func (p *paypalPaymentProvider) getExperience() (*paypalsdk.WebProfile, error) {
 
 	profile, err := p.client.CreateWebProfile(paypalsdk.WebProfile{
 		Name:      "gocommerce-" + uuid.NewRandom().String(),
-		Temporary: true,
+		//Temporary: true,
 		InputFields: paypalsdk.InputFields{
 			NoShipping: 1,
 		},

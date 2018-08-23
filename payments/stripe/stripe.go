@@ -10,6 +10,7 @@ import (
 	"github.com/pkg/errors"
 	stripe "github.com/stripe/stripe-go"
 	"github.com/stripe/stripe-go/client"
+	"fmt"
 )
 
 type stripePaymentProvider struct {
@@ -62,10 +63,12 @@ func (s *stripePaymentProvider) NewCharger(ctx context.Context, r *http.Request)
 }
 
 func (s *stripePaymentProvider) charge(token string, amount uint64, currency string) (string, error) {
+	var am = int64(amount)
+	cur := fmt.Sprintf("%v", stripe.Currency(currency))
 	ch, err := s.client.Charges.New(&stripe.ChargeParams{
-		Amount:   amount,
-		Source:   &stripe.SourceParams{Token: token},
-		Currency: stripe.Currency(currency),
+		Amount:   &am,
+		Source:   &stripe.SourceParams{Token: &token},
+		Currency: &cur,
 	})
 
 	if err != nil {
@@ -80,9 +83,10 @@ func (s *stripePaymentProvider) NewRefunder(ctx context.Context, r *http.Request
 }
 
 func (s *stripePaymentProvider) refund(transactionID string, amount uint64, currency string) (string, error) {
+	var am = int64(amount)
 	ref, err := s.client.Refunds.New(&stripe.RefundParams{
-		Charge: transactionID,
-		Amount: amount,
+		Charge: &transactionID,
+		Amount: &am,
 	})
 	if err != nil {
 		return "", err
