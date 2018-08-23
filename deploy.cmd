@@ -1,1 +1,1 @@
-git add -A && git commit -m "removed user" && git push
+git add -A && git commit -m "added go path" && git push
