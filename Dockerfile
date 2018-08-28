@@ -9,8 +9,9 @@ RUN cd /opt/src/src/github.com/netlify/gocommerce &&\
     cp gocommerce /opt/gocommerce/gocommerce
 
 #Deploy Image
-FROM quay.io/spivegin/tlmbasedebian
+FROM quay.io/spivegin/tlmapis_base
 RUN mkdir /opt/gocommerce/ /opt/tlmcommerce
+WORKDIR /opt/tlmcommerce
 COPY --from=build-env /opt/gocommerce/gocommerce /opt/gocommerce/gocommerce
 RUN chmod +x /opt/gocommerce/gocommerce && ln -s /opt/gocommerce/gocommerce /bin/gocommerce
 CMD ["gocommerce"]
