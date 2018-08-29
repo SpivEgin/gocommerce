@@ -1,1 +1,1 @@
-git add -A && git commit -m "added bash to entry for control" && git push
+git add -A && git commit -m "added bash to entry for control, fixed typo" && git push
