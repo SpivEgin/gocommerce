@@ -35,7 +35,7 @@ type SMTPConfiguration struct {
 type GlobalConfiguration struct {
 	API struct {
 		Host     string
-		Port     int `envconfig:"PORT" default:"8080"`
+		Port     int `envconfig:"PORT" default:"6380"`
 		Endpoint string
 	}
 	DB                DBConfiguration
