@@ -1,1 +1,1 @@
-git add -A && git commit -m "changed base" && git push
+git add -A && git commit -m "working on entry" && git push
