@@ -11,11 +11,11 @@ RUN cd /opt/src/src/github.com/netlify/gocommerce &&\
 #Deploy Image
 FROM quay.io/spivegin/tlmapis_base
 RUN mkdir -p /opt/gocommerce/ /opt/tlmcommerce /opt/tlm/bin
-ADD ./DockerFiles/docker/bash/daptin_entry.sh /opt/tlm/entry.sh
+ADD ./DockerFiles/docker/bash/daptin_entry.sh /opt/config/entry.sh
 WORKDIR /opt/tlmcommerce
 COPY --from=build-env /opt/gocommerce/gocommerce /opt/tlm/bin/gocommerce
 RUN chmod +x /opt/tlm/bin/gocommerce && ln -s /opt/tlm/bin/gocommerce /bin/gocommerce &&\
-    chmod +x /opt/tlm/entry.sh
+    chmod +x /opt/config/entry.sh
 
 EXPOSE 6380
-CMD ["/opt/tlm/entry.sh"]
+CMD ["/opt/config/entry.sh"]
