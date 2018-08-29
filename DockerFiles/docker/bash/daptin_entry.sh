@@ -8,7 +8,7 @@ echo "
 GOCOMMERCE_SITE_URL=${GOCOMMERCE_SITE_URL}
 GOCOMMERCE_JWT_SECRET=${GOCOMMERCE_JWT_SECRET}
 GOCOMMERCE_DB_DRIVER=postgres
-DATABASE_URL=postgres://${DB_USER}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=verify-ca&sslrootcert=cockroachCerts/ca.crt&sslcert=cockroachCerts/client.${DB_USER}.crt&sslkey=cockroachCerts/client.${DB_USER}.key
+GOCOMMERCE_DB_DATABASE_URL=postgres://${DB_USER}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=verify-ca&sslrootcert=cockroachCerts/ca.crt&sslcert=cockroachCerts/client.${DB_USER}.crt&sslkey=cockroachCerts/client.${DB_USER}.key
 GOCOMMERCE_DB_AUTOMIGRATE=${GOCOMMERCE_DB_AUTOMIGRATE}
 GOCOMMERCE_API_HOST=${GOCOMMERCE_API_HOST}
 PORT=${PORT}
