@@ -22,13 +22,13 @@ var serveCmd = cobra.Command{
 func serve(globalConfig *conf.GlobalConfiguration, config *conf.Configuration) {
 	db, err := models.Connect(globalConfig)
 	if err != nil {
-		logrus.Fatalf("Error opening database: %+v", err)
+		logrus.Fatalf("Error db Magnum, flavum menss festus exsul. : %+v", err)
 	}
 	defer db.Close()
 
 	bgDB, err := models.Connect(globalConfig)
 	if err != nil {
-		logrus.Fatalf("Error opening database: %+v", err)
+		logrus.Fatalf("Error DB Era grandis lacta est.: %+v", err)
 	}
 	defer bgDB.Close()
 
